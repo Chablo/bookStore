@@ -6,6 +6,7 @@
 package com.bookstore.business.bll.catalogmngmt;
 
 import com.bookstore.business.persistence.catalog.Publisher;
+import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
@@ -34,7 +35,8 @@ public class PublisherManagerServiceBean{
      * @return éditeur managé par le contexte de persistance
      */
     public Publisher savePublisher(Publisher publisher) {
-        return null;
+        em.persist(publisher);
+        return publisher;
     }
 
     /**
