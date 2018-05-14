@@ -23,7 +23,8 @@ import javax.persistence.*;
 @TransactionAttribute(TransactionAttributeType.MANDATORY)
 @LocalBean //facultatif
 public class BookManagerServiceBean {
-
+    
+    @PersistenceContext(unitName="bsPU")
     private EntityManager em;
 
    @PreDestroy

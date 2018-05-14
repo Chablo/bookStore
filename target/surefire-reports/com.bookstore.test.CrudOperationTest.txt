@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.bookstore.test.CrudOperationTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 1.309 sec <<< FAILURE!
-checkNbOfBooksFromCategoryRetrieving(com.bookstore.test.CrudOperationTest)  Time elapsed: 0.715 sec  <<< FAILURE!
+Tests run: 4, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 2.382 sec <<< FAILURE!
+checkNbOfBooksFromCategoryRetrieving(com.bookstore.test.CrudOperationTest)  Time elapsed: 1.224 sec  <<< FAILURE!
 java.lang.AssertionError: Category et/ou Book ne sont pas correctement configurés
 	at com.bookstore.test.CrudOperationTest.checkNbOfBooksFromCategoryRetrieving(CrudOperationTest.java:97)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -39,7 +39,7 @@ java.lang.AssertionError: Category et/ou Book ne sont pas correctement configur�
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-checkParentCatFromChildRetrieving(com.bookstore.test.CrudOperationTest)  Time elapsed: 0.002 sec  <<< FAILURE!
+checkParentCatFromChildRetrieving(com.bookstore.test.CrudOperationTest)  Time elapsed: 0 sec  <<< FAILURE!
 java.lang.AssertionError: com.bookstore.business.persistence.catalog.Category n'est pas correctement configurée
 	at com.bookstore.test.CrudOperationTest.checkParentCatFromChildRetrieving(CrudOperationTest.java:111)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -76,7 +76,7 @@ java.lang.AssertionError: com.bookstore.business.persistence.catalog.Category n'
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-checkPubFromBookRetrieving(com.bookstore.test.CrudOperationTest)  Time elapsed: 0.002 sec  <<< FAILURE!
+checkPubFromBookRetrieving(com.bookstore.test.CrudOperationTest)  Time elapsed: 0.001 sec  <<< FAILURE!
 java.lang.AssertionError: com.bookstore.business.persistence.catalog.Book n'est pas correctement configuré
 	at com.bookstore.test.CrudOperationTest.checkPubFromBookRetrieving(CrudOperationTest.java:80)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)

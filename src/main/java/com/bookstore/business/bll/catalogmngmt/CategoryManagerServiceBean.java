@@ -26,7 +26,8 @@ import javax.persistence.*;
 @TransactionAttribute(TransactionAttributeType.MANDATORY)
 @LocalBean
 public class CategoryManagerServiceBean{
-
+    
+    @PersistenceContext(unitName="bsPU")
     private EntityManager em;
     
     /**

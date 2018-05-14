@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="8" failures="6" name="com.bookstore.test.JPAModelingTest" time="0.048" errors="0" skipped="0">
+<testsuite tests="8" failures="6" name="com.bookstore.test.JPAModelingTest" time="0.039" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/home/charles/Programming/Tools/javatools/jdk8/jre/lib/amd64"/>
@@ -64,9 +64,9 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.bookstore.test.JPAModelingTest" name="checkPublisherV1" time="0.024"/>
-  <testcase classname="com.bookstore.test.JPAModelingTest" name="checkPublisherV2" time="0.008"/>
-  <testcase classname="com.bookstore.test.JPAModelingTest" name="checkCategoryV1" time="0.006">
+  <testcase classname="com.bookstore.test.JPAModelingTest" name="checkPublisherV1" time="0.021"/>
+  <testcase classname="com.bookstore.test.JPAModelingTest" name="checkPublisherV2" time="0.003"/>
+  <testcase classname="com.bookstore.test.JPAModelingTest" name="checkCategoryV1" time="0.007">
     <failure message="le nombre d&apos;annotations sur la classe n&apos;est pas bon (il en manque sûrement)" type="java.lang.AssertionError">java.lang.AssertionError: le nombre d&apos;annotations sur la classe n&apos;est pas bon (il en manque sûrement)
 	at com.bookstore.test.JPAModelingTest.checkAnnotatedEntityClass(JPAModelingTest.java:114)
 	at com.bookstore.test.JPAModelingTest.checkCategoryV1(JPAModelingTest.java:52)
@@ -101,7 +101,7 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </failure>
   </testcase>
-  <testcase classname="com.bookstore.test.JPAModelingTest" name="checkJpaCatBookRelation" time="0.002">
+  <testcase classname="com.bookstore.test.JPAModelingTest" name="checkJpaCatBookRelation" time="0.003">
     <failure message="mauvaise annotation ou annotation manquante pour configurer une relation plusieurs-&gt;plusieurs" type="java.lang.AssertionError">java.lang.AssertionError: mauvaise annotation ou annotation manquante pour configurer une relation plusieurs-&gt;plusieurs
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.assertTrue(Assert.java:41)
@@ -139,7 +139,7 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </failure>
   </testcase>
-  <testcase classname="com.bookstore.test.JPAModelingTest" name="checkJpaBookPubRelation" time="0.003">
+  <testcase classname="com.bookstore.test.JPAModelingTest" name="checkJpaBookPubRelation" time="0.002">
     <failure message="la relation 1 Publisher-&gt;plusieurs Books n&apos;est pas configurée ou est mal configurée" type="java.lang.AssertionError">java.lang.AssertionError: la relation 1 Publisher-&gt;plusieurs Books n&apos;est pas configurée ou est mal configurée
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.assertTrue(Assert.java:41)
@@ -177,7 +177,7 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </failure>
   </testcase>
-  <testcase classname="com.bookstore.test.JPAModelingTest" name="checkBookV1" time="0.003">
+  <testcase classname="com.bookstore.test.JPAModelingTest" name="checkBookV1" time="0.001">
     <failure message="le nombre d&apos;annotations sur la classe n&apos;est pas bon (il en manque sûrement)" type="java.lang.AssertionError">java.lang.AssertionError: le nombre d&apos;annotations sur la classe n&apos;est pas bon (il en manque sûrement)
 	at com.bookstore.test.JPAModelingTest.checkAnnotatedEntityClass(JPAModelingTest.java:114)
 	at com.bookstore.test.JPAModelingTest.checkBookV1(JPAModelingTest.java:60)

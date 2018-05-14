@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.bookstore.test.JPAModelingTest
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 0.128 sec <<< FAILURE!
-checkCategoryV1(com.bookstore.test.JPAModelingTest)  Time elapsed: 0.006 sec  <<< FAILURE!
+Tests run: 8, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 0.097 sec <<< FAILURE!
+checkCategoryV1(com.bookstore.test.JPAModelingTest)  Time elapsed: 0.007 sec  <<< FAILURE!
 java.lang.AssertionError: le nombre d'annotations sur la classe n'est pas bon (il en manque sûrement)
 	at com.bookstore.test.JPAModelingTest.checkAnnotatedEntityClass(JPAModelingTest.java:114)
 	at com.bookstore.test.JPAModelingTest.checkCategoryV1(JPAModelingTest.java:52)
@@ -36,7 +36,7 @@ java.lang.AssertionError: le nombre d'annotations sur la classe n'est pas bon (i
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-checkJpaCatBookRelation(com.bookstore.test.JPAModelingTest)  Time elapsed: 0.002 sec  <<< FAILURE!
+checkJpaCatBookRelation(com.bookstore.test.JPAModelingTest)  Time elapsed: 0.003 sec  <<< FAILURE!
 java.lang.AssertionError: mauvaise annotation ou annotation manquante pour configurer une relation plusieurs->plusieurs
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.assertTrue(Assert.java:41)
@@ -73,7 +73,7 @@ java.lang.AssertionError: mauvaise annotation ou annotation manquante pour confi
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-checkJpaBookPubRelation(com.bookstore.test.JPAModelingTest)  Time elapsed: 0.003 sec  <<< FAILURE!
+checkJpaBookPubRelation(com.bookstore.test.JPAModelingTest)  Time elapsed: 0.002 sec  <<< FAILURE!
 java.lang.AssertionError: la relation 1 Publisher->plusieurs Books n'est pas configurée ou est mal configurée
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.assertTrue(Assert.java:41)
@@ -110,7 +110,7 @@ java.lang.AssertionError: la relation 1 Publisher->plusieurs Books n'est pas con
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-checkBookV1(com.bookstore.test.JPAModelingTest)  Time elapsed: 0.003 sec  <<< FAILURE!
+checkBookV1(com.bookstore.test.JPAModelingTest)  Time elapsed: 0.001 sec  <<< FAILURE!
 java.lang.AssertionError: le nombre d'annotations sur la classe n'est pas bon (il en manque sûrement)
 	at com.bookstore.test.JPAModelingTest.checkAnnotatedEntityClass(JPAModelingTest.java:114)
 	at com.bookstore.test.JPAModelingTest.checkBookV1(JPAModelingTest.java:60)

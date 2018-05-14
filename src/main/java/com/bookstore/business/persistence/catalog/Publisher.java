@@ -21,15 +21,23 @@ import javax.persistence.Transient;
  * Entité publisher mappée sur la table editeurs
  */
 
+@Entity
+@Table(name="editeurs")
 public class Publisher implements Serializable {
     private static final long serialVersionUID = 1L;
     
+    @Id
+    @Column(name="ID_EDITEUR")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
+    @Column(name="RAISON_SOCIALE")
     private String name;
-      
+    
+    @Embedded    
     private Address address;
     
+    @Transient
     private List<Book>books;
 
     public Publisher() {

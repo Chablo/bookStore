@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="3" name="com.bookstore.test.CrudOperationTest" time="0.808" errors="0" skipped="0">
+<testsuite tests="4" failures="3" name="com.bookstore.test.CrudOperationTest" time="1.292" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/home/charles/Programming/Tools/javatools/jdk8/jre/lib/amd64"/>
@@ -64,7 +64,7 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.bookstore.test.CrudOperationTest" name="checkNbOfBooksFromCategoryRetrieving" time="0.715">
+  <testcase classname="com.bookstore.test.CrudOperationTest" name="checkNbOfBooksFromCategoryRetrieving" time="1.224">
     <failure message="Category et/ou Book ne sont pas correctement configurés" type="java.lang.AssertionError">java.lang.AssertionError: Category et/ou Book ne sont pas correctement configurés
 	at com.bookstore.test.CrudOperationTest.checkNbOfBooksFromCategoryRetrieving(CrudOperationTest.java:97)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -101,14 +101,14 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </failure>
-    <system-out>[EL Info]: 2018-05-14 15:12:20.261--ServerSession(1002021887)--EclipseLink, version: Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd
-[EL Info]: connection: 2018-05-14 15:12:20.701--ServerSession(1002021887)--file:/home/charles/Programming/Workspace/JavaEE/NetBeansProjects/bookStore/target/classes/_testPU login successful
+    <system-out>[EL Info]: 2018-05-14 16:14:58.362--ServerSession(1002021887)--EclipseLink, version: Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd
+[EL Info]: connection: 2018-05-14 16:14:59.255--ServerSession(1002021887)--file:/home/charles/Programming/Workspace/JavaEE/NetBeansProjects/bookStore/target/classes/_testPU login successful
 </system-out>
-    <system-err>Mon May 14 15:12:20 CEST 2018 WARN: Establishing SSL connection without server&apos;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&apos;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &apos;false&apos;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
-Mon May 14 15:12:20 CEST 2018 WARN: Establishing SSL connection without server&apos;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&apos;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &apos;false&apos;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+    <system-err>Mon May 14 16:14:58 CEST 2018 WARN: Establishing SSL connection without server&apos;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&apos;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &apos;false&apos;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon May 14 16:14:59 CEST 2018 WARN: Establishing SSL connection without server&apos;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&apos;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &apos;false&apos;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
 </system-err>
   </testcase>
-  <testcase classname="com.bookstore.test.CrudOperationTest" name="checkParentCatFromChildRetrieving" time="0.002">
+  <testcase classname="com.bookstore.test.CrudOperationTest" name="checkParentCatFromChildRetrieving" time="0">
     <failure message="com.bookstore.business.persistence.catalog.Category n&apos;est pas correctement configurée" type="java.lang.AssertionError">java.lang.AssertionError: com.bookstore.business.persistence.catalog.Category n&apos;est pas correctement configurée
 	at com.bookstore.test.CrudOperationTest.checkParentCatFromChildRetrieving(CrudOperationTest.java:111)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -146,8 +146,8 @@ Mon May 14 15:12:20 CEST 2018 WARN: Establishing SSL connection without server&a
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </failure>
   </testcase>
-  <testcase classname="com.bookstore.test.CrudOperationTest" name="ckeckPublisherRetrieving" time="0.089"/>
-  <testcase classname="com.bookstore.test.CrudOperationTest" name="checkPubFromBookRetrieving" time="0.002">
+  <testcase classname="com.bookstore.test.CrudOperationTest" name="ckeckPublisherRetrieving" time="0.067"/>
+  <testcase classname="com.bookstore.test.CrudOperationTest" name="checkPubFromBookRetrieving" time="0.001">
     <failure message="com.bookstore.business.persistence.catalog.Book n&apos;est pas correctement configuré" type="java.lang.AssertionError">java.lang.AssertionError: com.bookstore.business.persistence.catalog.Book n&apos;est pas correctement configuré
 	at com.bookstore.test.CrudOperationTest.checkPubFromBookRetrieving(CrudOperationTest.java:80)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)

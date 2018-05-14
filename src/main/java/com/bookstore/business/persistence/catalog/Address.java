@@ -15,14 +15,19 @@ import javax.persistence.Embeddable;
  * Embarquée dans Publisher
  */
 
+@Embeddable
 public class Address implements Serializable {
     
+    @Column(name="RUE")
     private String street;
     
+    @Column(name="CODE_POSTAL")
     private Long zp;
-
+    
+    @Column(name="VILLE")
     private String city;
     
+    @Column(name="PAYS")
     private String country;
 
     public Address(){}

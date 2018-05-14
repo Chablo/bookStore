@@ -23,7 +23,8 @@ import javax.persistence.*;
 @TransactionAttribute(TransactionAttributeType.MANDATORY)
 @LocalBean
 public class PublisherManagerServiceBean{
-
+    
+    @PersistenceContext(unitName="bsPU")
     private EntityManager em;
 
     /**
