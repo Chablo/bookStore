@@ -1,0 +1,12 @@
+/home/charles/Programming/Workspace/JavaEE/NetBeansProjects/bookStore/src/main/java/com/bookstore/business/persistence/catalog/Category.java
+/home/charles/Programming/Workspace/JavaEE/NetBeansProjects/bookStore/src/main/java/com/bookstore/business/persistence/catalog/Publisher.java
+/home/charles/Programming/Workspace/JavaEE/NetBeansProjects/bookStore/src/main/java/com/bookstore/business/bll/catalogmngmt/CategoryManagerServiceBean.java
+/home/charles/Programming/Workspace/JavaEE/NetBeansProjects/bookStore/src/main/java/com/bookstore/model/PublisherBean.java
+/home/charles/Programming/Workspace/JavaEE/NetBeansProjects/bookStore/src/main/java/com/bookstore/business/persistence/catalog/Address.java
+/home/charles/Programming/Workspace/JavaEE/NetBeansProjects/bookStore/src/main/java/com/bookstore/business/bll/catalogmngmt/BookManagerServiceBean.java
+/home/charles/Programming/Workspace/JavaEE/NetBeansProjects/bookStore/src/main/java/com/bookstore/business/persistence/catalog/Book.java
+/home/charles/Programming/Workspace/JavaEE/NetBeansProjects/bookStore/src/main/java/com/bookstore/business/bll/catalogmngmt/PublisherManagerServiceBean.java
+/home/charles/Programming/Workspace/JavaEE/NetBeansProjects/bookStore/src/main/java/com/bookstore/business/bll/catalogmngmt/CatalogManagerServiceBean.java
+/home/charles/Programming/Workspace/JavaEE/NetBeansProjects/bookStore/src/main/java/com/bookstore/model/CategoryBean.java
+/home/charles/Programming/Workspace/JavaEE/NetBeansProjects/bookStore/src/main/java/com/bookstore/business/bll/catalogmngmt/CatalogManagerService.java
+/home/charles/Programming/Workspace/JavaEE/NetBeansProjects/bookStore/src/main/java/com/bookstore/model/BookBean.java
