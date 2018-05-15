@@ -38,8 +38,9 @@ public class BookManagerServiceBean {
     * sauvegarder en base l'état d'un livre nouvellement créé
     * @return le livre persisté
     */
-    public Book saveBook(Book book){      
-       return null;
+    public Book saveBook(Book book){
+       em.persist(book);
+       return book;
     }
 
 /**
