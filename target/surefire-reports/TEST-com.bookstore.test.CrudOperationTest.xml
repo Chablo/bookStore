@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="com.bookstore.test.CrudOperationTest" time="1.073" errors="2" skipped="0">
+<testsuite tests="8" failures="0" name="com.bookstore.test.CrudOperationTest" time="1.654" errors="8" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/home/charles/Programming/Tools/javatools/jdk8/jre/lib/amd64"/>
@@ -64,25 +64,63 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.bookstore.test.CrudOperationTest" name="com.bookstore.test.CrudOperationTest" time="0.536">
-    <error message="
-Exception Description: An exception was thrown while searching for persistence archives with ClassLoader: sun.misc.Launcher$AppClassLoader@6bc7c054
-Internal Exception: javax.persistence.PersistenceException: Exception [EclipseLink-28018] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
-Exception Description: Predeployment of PersistenceUnit [testPU] failed.
-Internal Exception: Exception [EclipseLink-7169] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.ValidationException
-Exception Description: Class [class com.bookstore.business.persistence.catalog.Book] has two @GeneratedValues: for fields [livres.ID_EDITEUR] and [livres.ID_LIVRE]. Only one is allowed." type="Local Exception Stack">Local Exception Stack: 
-Exception [EclipseLink-30005] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.PersistenceUnitLoadingException
-Exception Description: An exception was thrown while searching for persistence archives with ClassLoader: sun.misc.Launcher$AppClassLoader@6bc7c054
-Internal Exception: javax.persistence.PersistenceException: Exception [EclipseLink-28018] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
-Exception Description: Predeployment of PersistenceUnit [testPU] failed.
-Internal Exception: Exception [EclipseLink-7169] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.ValidationException
-Exception Description: Class [class com.bookstore.business.persistence.catalog.Book] has two @GeneratedValues: for fields [livres.ID_EDITEUR] and [livres.ID_LIVRE]. Only one is allowed.
-	at org.eclipse.persistence.exceptions.PersistenceUnitLoadingException.exceptionSearchingForPersistenceResources(PersistenceUnitLoadingException.java:127)
-	at org.eclipse.persistence.jpa.PersistenceProvider.createEntityManagerFactoryImpl(PersistenceProvider.java:107)
-	at org.eclipse.persistence.jpa.PersistenceProvider.createEntityManagerFactory(PersistenceProvider.java:177)
-	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
-	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
-	at com.bookstore.test.CrudOperationTest.setUpClass(CrudOperationTest.java:32)
+  <testcase classname="com.bookstore.test.CrudOperationTest" name="checkNbOfBooksFromCategoryRetrieving" time="0.811">
+    <error message="Exception [EclipseLink-28019] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Deployment of PersistenceUnit [testPU] failed. Close all factories for this PersistenceUnit.
+Internal Exception: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.IntegrityException
+Descriptor Exceptions: 
+---------------------------------------------------------
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Publisher --&gt; [DatabaseTable(editeurs)])
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Book --&gt; [DatabaseTable(livres)])
+
+Runtime Exceptions: 
+---------------------------------------------------------
+" type="javax.persistence.PersistenceException">javax.persistence.PersistenceException: Exception [EclipseLink-28019] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Deployment of PersistenceUnit [testPU] failed. Close all factories for this PersistenceUnit.
+Internal Exception: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.IntegrityException
+Descriptor Exceptions: 
+---------------------------------------------------------
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Publisher --&gt; [DatabaseTable(editeurs)])
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Book --&gt; [DatabaseTable(livres)])
+
+Runtime Exceptions: 
+---------------------------------------------------------
+
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.createDeployFailedPersistenceException(EntityManagerSetupImpl.java:820)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:760)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getAbstractSession(EntityManagerFactoryDelegate.java:204)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.createEntityManagerImpl(EntityManagerFactoryDelegate.java:304)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.createEntityManagerImpl(EntityManagerFactoryImpl.java:336)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.createEntityManager(EntityManagerFactoryImpl.java:302)
+	at com.bookstore.test.CrudOperationTest.setUp(CrudOperationTest.java:42)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -91,6 +129,16 @@ Exception Description: Class [class com.bookstore.business.persistence.catalog.B
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
 	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
 	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
@@ -105,41 +153,121 @@ Exception Description: Class [class com.bookstore.business.persistence.catalog.B
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-Caused by: javax.persistence.PersistenceException: Exception [EclipseLink-28018] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
-Exception Description: Predeployment of PersistenceUnit [testPU] failed.
-Internal Exception: Exception [EclipseLink-7169] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.ValidationException
-Exception Description: Class [class com.bookstore.business.persistence.catalog.Book] has two @GeneratedValues: for fields [livres.ID_EDITEUR] and [livres.ID_LIVRE]. Only one is allowed.
-	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.createPredeployFailedPersistenceException(EntityManagerSetupImpl.java:1954)
-	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.predeploy(EntityManagerSetupImpl.java:1945)
-	at org.eclipse.persistence.internal.jpa.deployment.JPAInitializer.callPredeploy(JPAInitializer.java:98)
-	at org.eclipse.persistence.jpa.PersistenceProvider.createEntityManagerFactoryImpl(PersistenceProvider.java:96)
-	... 26 more
-Caused by: Exception [EclipseLink-28018] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
-Exception Description: Predeployment of PersistenceUnit [testPU] failed.
-Internal Exception: Exception [EclipseLink-7169] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.ValidationException
-Exception Description: Class [class com.bookstore.business.persistence.catalog.Book] has two @GeneratedValues: for fields [livres.ID_EDITEUR] and [livres.ID_LIVRE]. Only one is allowed.
-	at org.eclipse.persistence.exceptions.EntityManagerSetupException.predeployFailed(EntityManagerSetupException.java:230)
-	... 30 more
-Caused by: Exception [EclipseLink-7169] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.ValidationException
-Exception Description: Class [class com.bookstore.business.persistence.catalog.Book] has two @GeneratedValues: for fields [livres.ID_EDITEUR] and [livres.ID_LIVRE]. Only one is allowed.
-	at org.eclipse.persistence.exceptions.ValidationException.onlyOneGeneratedValueIsAllowed(ValidationException.java:2097)
-	at org.eclipse.persistence.internal.jpa.metadata.accessors.mappings.BasicAccessor.processGeneratedValue(BasicAccessor.java:485)
-	at org.eclipse.persistence.internal.jpa.metadata.accessors.mappings.BasicAccessor.process(BasicAccessor.java:430)
-	at org.eclipse.persistence.internal.jpa.metadata.accessors.mappings.IdAccessor.process(IdAccessor.java:94)
-	at org.eclipse.persistence.internal.jpa.metadata.MetadataDescriptor.processMappingAccessors(MetadataDescriptor.java:1536)
-	at org.eclipse.persistence.internal.jpa.metadata.accessors.classes.ClassAccessor.processMappingAccessors(ClassAccessor.java:1648)
-	at org.eclipse.persistence.internal.jpa.metadata.accessors.classes.EntityAccessor.processMappingAccessors(EntityAccessor.java:1234)
-	at org.eclipse.persistence.internal.jpa.metadata.accessors.classes.EntityAccessor.process(EntityAccessor.java:697)
-	at org.eclipse.persistence.internal.jpa.metadata.MetadataProject.processStage2(MetadataProject.java:1793)
-	at org.eclipse.persistence.internal.jpa.metadata.MetadataProcessor.processORMMetadata(MetadataProcessor.java:576)
-	at org.eclipse.persistence.internal.jpa.deployment.PersistenceUnitProcessor.processORMetadata(PersistenceUnitProcessor.java:585)
-	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.predeploy(EntityManagerSetupImpl.java:1869)
-	... 28 more
+Caused by: Exception [EclipseLink-28019] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Deployment of PersistenceUnit [testPU] failed. Close all factories for this PersistenceUnit.
+Internal Exception: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.IntegrityException
+Descriptor Exceptions: 
+---------------------------------------------------------
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Publisher --&gt; [DatabaseTable(editeurs)])
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Book --&gt; [DatabaseTable(livres)])
+
+Runtime Exceptions: 
+---------------------------------------------------------
+
+	at org.eclipse.persistence.exceptions.EntityManagerSetupException.deployFailed(EntityManagerSetupException.java:238)
+	... 39 more
+Caused by: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.IntegrityException
+Descriptor Exceptions: 
+---------------------------------------------------------
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Publisher --&gt; [DatabaseTable(editeurs)])
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Book --&gt; [DatabaseTable(livres)])
+
+Runtime Exceptions: 
+---------------------------------------------------------
+
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.initializeDescriptors(DatabaseSessionImpl.java:696)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.initializeDescriptors(DatabaseSessionImpl.java:632)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.initializeDescriptors(DatabaseSessionImpl.java:568)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.postConnectDatasource(DatabaseSessionImpl.java:799)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.loginAndDetectDatasource(DatabaseSessionImpl.java:743)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryProvider.login(EntityManagerFactoryProvider.java:239)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:685)
+	... 37 more
 </error>
+    <system-out>[EL Info]: 2018-05-15 09:03:20.409--ServerSession(860481979)--EclipseLink, version: Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd
+[EL Severe]: 2018-05-15 09:03:20.951--ServerSession(860481979)--Exception [EclipseLink-0] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.IntegrityException
+Descriptor Exceptions: 
+---------------------------------------------------------
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Publisher --&gt; [DatabaseTable(editeurs)])
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Book --&gt; [DatabaseTable(livres)])
+
+Runtime Exceptions: 
+---------------------------------------------------------
+
+[EL Info]: connection: 2018-05-15 09:03:20.953--ServerSession(860481979)--file:/home/charles/Programming/Workspace/JavaEE/NetBeansProjects/bookStore/target/classes/_testPU logout successful
+[EL Severe]: ejb: 2018-05-15 09:03:20.957--ServerSession(860481979)--Exception [EclipseLink-0] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.IntegrityException
+Descriptor Exceptions: 
+---------------------------------------------------------
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Publisher --&gt; [DatabaseTable(editeurs)])
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Book --&gt; [DatabaseTable(livres)])
+
+Runtime Exceptions: 
+---------------------------------------------------------
+
+</system-out>
+    <system-err>Tue May 15 09:03:20 CEST 2018 WARN: Establishing SSL connection without server&apos;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&apos;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &apos;false&apos;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Tue May 15 09:03:20 CEST 2018 WARN: Establishing SSL connection without server&apos;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&apos;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &apos;false&apos;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+</system-err>
   </testcase>
-  <testcase classname="com.bookstore.test.CrudOperationTest" name="com.bookstore.test.CrudOperationTest" time="0.537">
+  <testcase classname="com.bookstore.test.CrudOperationTest" name="checkNbOfBooksFromCategoryRetrieving" time="0.812">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at com.bookstore.test.CrudOperationTest.tearDownClass(CrudOperationTest.java:37)
+	at com.bookstore.test.CrudOperationTest.tearDown(CrudOperationTest.java:47)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -148,6 +276,751 @@ Exception Description: Class [class com.bookstore.business.persistence.catalog.B
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</error>
+  </testcase>
+  <testcase classname="com.bookstore.test.CrudOperationTest" name="checkParentCatFromChildRetrieving" time="0.002">
+    <error message="Exception [EclipseLink-28013] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Unable to deploy PersistenceUnit [testPU] in invalid state [DeployFailed].
+Internal Exception: javax.persistence.PersistenceException: Exception [EclipseLink-28019] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Deployment of PersistenceUnit [testPU] failed. Close all factories for this PersistenceUnit.
+Internal Exception: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.IntegrityException
+Descriptor Exceptions: 
+---------------------------------------------------------
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Publisher --&gt; [DatabaseTable(editeurs)])
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Book --&gt; [DatabaseTable(livres)])
+
+Runtime Exceptions: 
+---------------------------------------------------------
+" type="javax.persistence.PersistenceException">javax.persistence.PersistenceException: Exception [EclipseLink-28013] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Unable to deploy PersistenceUnit [testPU] in invalid state [DeployFailed].
+Internal Exception: javax.persistence.PersistenceException: Exception [EclipseLink-28019] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Deployment of PersistenceUnit [testPU] failed. Close all factories for this PersistenceUnit.
+Internal Exception: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.IntegrityException
+Descriptor Exceptions: 
+---------------------------------------------------------
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Publisher --&gt; [DatabaseTable(editeurs)])
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Book --&gt; [DatabaseTable(livres)])
+
+Runtime Exceptions: 
+---------------------------------------------------------
+
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:547)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getAbstractSession(EntityManagerFactoryDelegate.java:204)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.createEntityManagerImpl(EntityManagerFactoryDelegate.java:304)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.createEntityManagerImpl(EntityManagerFactoryImpl.java:336)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.createEntityManager(EntityManagerFactoryImpl.java:302)
+	at com.bookstore.test.CrudOperationTest.setUp(CrudOperationTest.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: Exception [EclipseLink-28013] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Unable to deploy PersistenceUnit [testPU] in invalid state [DeployFailed].
+Internal Exception: javax.persistence.PersistenceException: Exception [EclipseLink-28019] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Deployment of PersistenceUnit [testPU] failed. Close all factories for this PersistenceUnit.
+Internal Exception: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.IntegrityException
+Descriptor Exceptions: 
+---------------------------------------------------------
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Publisher --&gt; [DatabaseTable(editeurs)])
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Book --&gt; [DatabaseTable(livres)])
+
+Runtime Exceptions: 
+---------------------------------------------------------
+
+	at org.eclipse.persistence.exceptions.EntityManagerSetupException.cannotDeployWithoutPredeploy(EntityManagerSetupException.java:190)
+	... 38 more
+Caused by: javax.persistence.PersistenceException: Exception [EclipseLink-28019] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Deployment of PersistenceUnit [testPU] failed. Close all factories for this PersistenceUnit.
+Internal Exception: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.IntegrityException
+Descriptor Exceptions: 
+---------------------------------------------------------
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Publisher --&gt; [DatabaseTable(editeurs)])
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Book --&gt; [DatabaseTable(livres)])
+
+Runtime Exceptions: 
+---------------------------------------------------------
+
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.createDeployFailedPersistenceException(EntityManagerSetupImpl.java:820)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:760)
+	... 37 more
+Caused by: Exception [EclipseLink-28019] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Deployment of PersistenceUnit [testPU] failed. Close all factories for this PersistenceUnit.
+Internal Exception: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.IntegrityException
+Descriptor Exceptions: 
+---------------------------------------------------------
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Publisher --&gt; [DatabaseTable(editeurs)])
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Book --&gt; [DatabaseTable(livres)])
+
+Runtime Exceptions: 
+---------------------------------------------------------
+
+	at org.eclipse.persistence.exceptions.EntityManagerSetupException.deployFailed(EntityManagerSetupException.java:238)
+	... 39 more
+Caused by: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.IntegrityException
+Descriptor Exceptions: 
+---------------------------------------------------------
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Publisher --&gt; [DatabaseTable(editeurs)])
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Book --&gt; [DatabaseTable(livres)])
+
+Runtime Exceptions: 
+---------------------------------------------------------
+
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.initializeDescriptors(DatabaseSessionImpl.java:696)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.initializeDescriptors(DatabaseSessionImpl.java:632)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.initializeDescriptors(DatabaseSessionImpl.java:568)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.postConnectDatasource(DatabaseSessionImpl.java:799)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.loginAndDetectDatasource(DatabaseSessionImpl.java:743)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryProvider.login(EntityManagerFactoryProvider.java:239)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:685)
+	... 37 more
+</error>
+  </testcase>
+  <testcase classname="com.bookstore.test.CrudOperationTest" name="checkParentCatFromChildRetrieving" time="0.003">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at com.bookstore.test.CrudOperationTest.tearDown(CrudOperationTest.java:47)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</error>
+  </testcase>
+  <testcase classname="com.bookstore.test.CrudOperationTest" name="ckeckPublisherRetrieving" time="0.012">
+    <error message="Exception [EclipseLink-28013] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Unable to deploy PersistenceUnit [testPU] in invalid state [DeployFailed].
+Internal Exception: javax.persistence.PersistenceException: Exception [EclipseLink-28019] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Deployment of PersistenceUnit [testPU] failed. Close all factories for this PersistenceUnit.
+Internal Exception: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.IntegrityException
+Descriptor Exceptions: 
+---------------------------------------------------------
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Publisher --&gt; [DatabaseTable(editeurs)])
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Book --&gt; [DatabaseTable(livres)])
+
+Runtime Exceptions: 
+---------------------------------------------------------
+" type="javax.persistence.PersistenceException">javax.persistence.PersistenceException: Exception [EclipseLink-28013] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Unable to deploy PersistenceUnit [testPU] in invalid state [DeployFailed].
+Internal Exception: javax.persistence.PersistenceException: Exception [EclipseLink-28019] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Deployment of PersistenceUnit [testPU] failed. Close all factories for this PersistenceUnit.
+Internal Exception: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.IntegrityException
+Descriptor Exceptions: 
+---------------------------------------------------------
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Publisher --&gt; [DatabaseTable(editeurs)])
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Book --&gt; [DatabaseTable(livres)])
+
+Runtime Exceptions: 
+---------------------------------------------------------
+
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:547)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getAbstractSession(EntityManagerFactoryDelegate.java:204)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.createEntityManagerImpl(EntityManagerFactoryDelegate.java:304)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.createEntityManagerImpl(EntityManagerFactoryImpl.java:336)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.createEntityManager(EntityManagerFactoryImpl.java:302)
+	at com.bookstore.test.CrudOperationTest.setUp(CrudOperationTest.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: Exception [EclipseLink-28013] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Unable to deploy PersistenceUnit [testPU] in invalid state [DeployFailed].
+Internal Exception: javax.persistence.PersistenceException: Exception [EclipseLink-28019] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Deployment of PersistenceUnit [testPU] failed. Close all factories for this PersistenceUnit.
+Internal Exception: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.IntegrityException
+Descriptor Exceptions: 
+---------------------------------------------------------
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Publisher --&gt; [DatabaseTable(editeurs)])
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Book --&gt; [DatabaseTable(livres)])
+
+Runtime Exceptions: 
+---------------------------------------------------------
+
+	at org.eclipse.persistence.exceptions.EntityManagerSetupException.cannotDeployWithoutPredeploy(EntityManagerSetupException.java:190)
+	... 38 more
+Caused by: javax.persistence.PersistenceException: Exception [EclipseLink-28019] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Deployment of PersistenceUnit [testPU] failed. Close all factories for this PersistenceUnit.
+Internal Exception: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.IntegrityException
+Descriptor Exceptions: 
+---------------------------------------------------------
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Publisher --&gt; [DatabaseTable(editeurs)])
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Book --&gt; [DatabaseTable(livres)])
+
+Runtime Exceptions: 
+---------------------------------------------------------
+
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.createDeployFailedPersistenceException(EntityManagerSetupImpl.java:820)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:760)
+	... 37 more
+Caused by: Exception [EclipseLink-28019] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Deployment of PersistenceUnit [testPU] failed. Close all factories for this PersistenceUnit.
+Internal Exception: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.IntegrityException
+Descriptor Exceptions: 
+---------------------------------------------------------
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Publisher --&gt; [DatabaseTable(editeurs)])
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Book --&gt; [DatabaseTable(livres)])
+
+Runtime Exceptions: 
+---------------------------------------------------------
+
+	at org.eclipse.persistence.exceptions.EntityManagerSetupException.deployFailed(EntityManagerSetupException.java:238)
+	... 39 more
+Caused by: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.IntegrityException
+Descriptor Exceptions: 
+---------------------------------------------------------
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Publisher --&gt; [DatabaseTable(editeurs)])
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Book --&gt; [DatabaseTable(livres)])
+
+Runtime Exceptions: 
+---------------------------------------------------------
+
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.initializeDescriptors(DatabaseSessionImpl.java:696)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.initializeDescriptors(DatabaseSessionImpl.java:632)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.initializeDescriptors(DatabaseSessionImpl.java:568)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.postConnectDatasource(DatabaseSessionImpl.java:799)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.loginAndDetectDatasource(DatabaseSessionImpl.java:743)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryProvider.login(EntityManagerFactoryProvider.java:239)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:685)
+	... 37 more
+</error>
+  </testcase>
+  <testcase classname="com.bookstore.test.CrudOperationTest" name="ckeckPublisherRetrieving" time="0.012">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at com.bookstore.test.CrudOperationTest.tearDown(CrudOperationTest.java:47)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</error>
+  </testcase>
+  <testcase classname="com.bookstore.test.CrudOperationTest" name="checkPubFromBookRetrieving" time="0.001">
+    <error message="Exception [EclipseLink-28013] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Unable to deploy PersistenceUnit [testPU] in invalid state [DeployFailed].
+Internal Exception: javax.persistence.PersistenceException: Exception [EclipseLink-28019] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Deployment of PersistenceUnit [testPU] failed. Close all factories for this PersistenceUnit.
+Internal Exception: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.IntegrityException
+Descriptor Exceptions: 
+---------------------------------------------------------
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Publisher --&gt; [DatabaseTable(editeurs)])
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Book --&gt; [DatabaseTable(livres)])
+
+Runtime Exceptions: 
+---------------------------------------------------------
+" type="javax.persistence.PersistenceException">javax.persistence.PersistenceException: Exception [EclipseLink-28013] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Unable to deploy PersistenceUnit [testPU] in invalid state [DeployFailed].
+Internal Exception: javax.persistence.PersistenceException: Exception [EclipseLink-28019] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Deployment of PersistenceUnit [testPU] failed. Close all factories for this PersistenceUnit.
+Internal Exception: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.IntegrityException
+Descriptor Exceptions: 
+---------------------------------------------------------
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Publisher --&gt; [DatabaseTable(editeurs)])
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Book --&gt; [DatabaseTable(livres)])
+
+Runtime Exceptions: 
+---------------------------------------------------------
+
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:547)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getAbstractSession(EntityManagerFactoryDelegate.java:204)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.createEntityManagerImpl(EntityManagerFactoryDelegate.java:304)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.createEntityManagerImpl(EntityManagerFactoryImpl.java:336)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.createEntityManager(EntityManagerFactoryImpl.java:302)
+	at com.bookstore.test.CrudOperationTest.setUp(CrudOperationTest.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: Exception [EclipseLink-28013] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Unable to deploy PersistenceUnit [testPU] in invalid state [DeployFailed].
+Internal Exception: javax.persistence.PersistenceException: Exception [EclipseLink-28019] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Deployment of PersistenceUnit [testPU] failed. Close all factories for this PersistenceUnit.
+Internal Exception: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.IntegrityException
+Descriptor Exceptions: 
+---------------------------------------------------------
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Publisher --&gt; [DatabaseTable(editeurs)])
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Book --&gt; [DatabaseTable(livres)])
+
+Runtime Exceptions: 
+---------------------------------------------------------
+
+	at org.eclipse.persistence.exceptions.EntityManagerSetupException.cannotDeployWithoutPredeploy(EntityManagerSetupException.java:190)
+	... 38 more
+Caused by: javax.persistence.PersistenceException: Exception [EclipseLink-28019] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Deployment of PersistenceUnit [testPU] failed. Close all factories for this PersistenceUnit.
+Internal Exception: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.IntegrityException
+Descriptor Exceptions: 
+---------------------------------------------------------
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Publisher --&gt; [DatabaseTable(editeurs)])
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Book --&gt; [DatabaseTable(livres)])
+
+Runtime Exceptions: 
+---------------------------------------------------------
+
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.createDeployFailedPersistenceException(EntityManagerSetupImpl.java:820)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:760)
+	... 37 more
+Caused by: Exception [EclipseLink-28019] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
+Exception Description: Deployment of PersistenceUnit [testPU] failed. Close all factories for this PersistenceUnit.
+Internal Exception: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.IntegrityException
+Descriptor Exceptions: 
+---------------------------------------------------------
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Publisher --&gt; [DatabaseTable(editeurs)])
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Book --&gt; [DatabaseTable(livres)])
+
+Runtime Exceptions: 
+---------------------------------------------------------
+
+	at org.eclipse.persistence.exceptions.EntityManagerSetupException.deployFailed(EntityManagerSetupException.java:238)
+	... 39 more
+Caused by: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.IntegrityException
+Descriptor Exceptions: 
+---------------------------------------------------------
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Publisher --&gt; [DatabaseTable(editeurs)])
+
+Exception [EclipseLink-168] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DescriptorException
+Exception Description: Problem in creating new instance using the default constructor.  The default constructor triggered an exception.
+Internal Exception: java.lang.reflect.InvocationTargetException
+Target Invocation Exception: java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   method value()
+  location: @interface javax.persistence.JoinColumn
+Descriptor: RelationalDescriptor(com.bookstore.business.persistence.catalog.Book --&gt; [DatabaseTable(livres)])
+
+Runtime Exceptions: 
+---------------------------------------------------------
+
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.initializeDescriptors(DatabaseSessionImpl.java:696)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.initializeDescriptors(DatabaseSessionImpl.java:632)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.initializeDescriptors(DatabaseSessionImpl.java:568)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.postConnectDatasource(DatabaseSessionImpl.java:799)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.loginAndDetectDatasource(DatabaseSessionImpl.java:743)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryProvider.login(EntityManagerFactoryProvider.java:239)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:685)
+	... 37 more
+</error>
+  </testcase>
+  <testcase classname="com.bookstore.test.CrudOperationTest" name="checkPubFromBookRetrieving" time="0.001">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at com.bookstore.test.CrudOperationTest.tearDown(CrudOperationTest.java:47)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
 	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
 	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
