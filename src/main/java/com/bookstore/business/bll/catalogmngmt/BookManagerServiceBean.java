@@ -59,7 +59,7 @@ public class BookManagerServiceBean {
  * @param book le livre a supprimé. Si book est null, l'opération de suppression n'est pas exécutée
  */
     public void deleteBook(Book book) { 
-      
+        em.remove(book);
     }
 
     /**
