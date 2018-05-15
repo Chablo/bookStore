@@ -8,6 +8,13 @@ package com.bookstore.business.persistence.catalog;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  *
@@ -17,15 +24,22 @@ import java.util.List;
  * 1 requête permet de retrouver les catégories racines / sans parents
  */
 
+@Entity
+@Table(name="categories")
 public class Category implements Serializable {
     private static final long serialVersionUID = 1L;
-  
+    
+    @Id
+    @Column(name="ID_CATEGORIE")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    
+    @Column(name="TITRE")
     private String title;
-
+    
+    @Column(name="DESCRIPTION")
     private String description;
-
+    
     private Category parentCategory;
 
     private List<Book> books= new ArrayList<>();

@@ -10,6 +10,16 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import static javax.persistence.TemporalType.DATE;
+import javax.persistence.Transient;
 
 /**
  *
@@ -17,19 +27,28 @@ import java.util.List;
  * la date de parution utilise l'annotation @Temporal(javax.persistence.TemporalType.DATE)
  */
 
+@Entity
+@Table(name="livres")
 public class Book implements Serializable {
     private static final long serialVersionUID = 1L;
     
-    private Long id;                        
-                                           
+    @Id
+    @Column(name="ID_LIVRE")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    @Column(name="TITRE")                                           
     private String title;
-
+    
+    @Temporal(DATE)    
+    @Column(name="DATE_PARUTION")
     private Date date;
     
+    @Column(name="RESUME_LIVRE")
     private String summary;
     
     private Publisher publisher;
-
+    
     private List<Category> categories = new ArrayList<>();
 
     public Book() {
