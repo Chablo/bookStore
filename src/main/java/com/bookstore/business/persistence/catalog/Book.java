@@ -49,6 +49,7 @@ public class Book implements Serializable {
     private String summary;
     
     @ManyToOne(cascade=MERGE)
+    @JoinColumn(name="ID_EDITEUR")
     private Publisher publisher;
     
     private List<Category> categories = new ArrayList<>();
