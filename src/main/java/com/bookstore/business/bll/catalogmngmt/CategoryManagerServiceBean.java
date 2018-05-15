@@ -36,7 +36,10 @@ public class CategoryManagerServiceBean{
      * @return identité de la catégorie persistée
      */
     public Long saveCategory(Category category) {
-     return null;
+        em.persist(category);
+        em.flush();
+        em.refresh(category);
+        return category.getId();
     }
    
     /**
