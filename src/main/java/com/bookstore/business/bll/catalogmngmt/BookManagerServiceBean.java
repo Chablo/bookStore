@@ -48,7 +48,8 @@ public class BookManagerServiceBean {
  * @return le livre correspondant à l'id passée en argument
  */
     public Book findBookById(Long bookId) {
-       return null;
+       Book publisher = em.find(Book.class, bookId);
+       return publisher;
     }
 
  /**
@@ -82,7 +83,8 @@ public class BookManagerServiceBean {
      */
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
     public Book updateBook(Book book) { 
-        return null;
+        em.merge(book);
+        return book;
     }
 
 }

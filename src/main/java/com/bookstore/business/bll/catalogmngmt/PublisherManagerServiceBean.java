@@ -45,8 +45,9 @@ public class PublisherManagerServiceBean{
      * @param publisherId identité de l'éditeur à retrouver en base
      * @return l'éditeur recherché
      */
-    public Publisher findPublisherById(Long publisherId) {
-      return null;
+    public Publisher findPublisherById(Long publisherId) { 
+      Publisher publisher = em.find(Publisher.class, publisherId);
+      return publisher;
     }
   
 }
