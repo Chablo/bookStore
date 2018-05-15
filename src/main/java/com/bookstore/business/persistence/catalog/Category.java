@@ -17,6 +17,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -44,7 +45,8 @@ public class Category implements Serializable {
     @Column(name="DESCRIPTION")
     private String description;
     
-    @Transient
+    @ManyToOne
+    @JoinColumn(name="CAT_ID_CATEGORIE")
     private Category parentCategory;
     
     @ManyToMany(cascade=MERGE)
