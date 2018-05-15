@@ -73,7 +73,10 @@ public class BookManagerServiceBean {
      */ 
     @TransactionAttribute(TransactionAttributeType.SUPPORTS) //méthode pouvant joindre le contexte transactionnel de l'appelant
     public List<Book> findByCriteria(String pattern) {
-        return null;
+        Query query = em.createQuery("SELECT l FROM Book AS l WHERE l.title LIKE :param");
+        query.setParameter("param", "%" + pattern + "%");
+        List<Book> books = query.getResultList();
+        return books;
      
     }
 

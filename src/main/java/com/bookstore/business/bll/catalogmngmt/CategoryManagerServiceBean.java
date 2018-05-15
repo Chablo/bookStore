@@ -60,7 +60,9 @@ public class CategoryManagerServiceBean{
      * @return la liste de catégories n'ayant pas de parents.
      */
     public List<Category> getRootCategories() {
-        return null;
+        Query query = em.createNamedQuery("Category.getRootCategories");
+        List<Category> rootCategories =  query.getResultList();
+        return rootCategories;
     }
 
    /**
@@ -71,7 +73,9 @@ public class CategoryManagerServiceBean{
     * retourne null si aucune catégorie enfant n'est  retrouvée en fonction de parentId
     */
     public List<Category> getchildrenCategories(Long parentId) {
-       return null;
+        Query query = em.createNamedQuery("Category.getChildrenCategories").setParameter("param", parentId);
+        List<Category> childrenCategories =  query.getResultList();
+        return childrenCategories;
     }
 
 }

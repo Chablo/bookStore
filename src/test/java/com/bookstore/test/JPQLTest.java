@@ -50,7 +50,7 @@ public class JPQLTest {
 
     @Test
     public void checkSimpleRequest(){
-        String jpql = "VOTRE REQUETE";
+        String jpql = "SELECT c FROM Category AS c WHERE c.parentCategory IS NULL";
         try{
         Query query = em.createQuery(jpql);
         List result = query.getResultList();
@@ -63,9 +63,9 @@ public class JPQLTest {
     
     @Test
     public void checkRequestWithStringParameter(){
-        String jpql = "VOTRE REQUETE PARAMETREE"; //remplacez par votre requête 
-        String param="VALEUR DU PARAMETRE"; //remplacez par la valeur de type %votreChaine% (votre motif de recherche encadré par %)
-        String paramName = "VOTRE PARAMETRE";//remplacez par le nom du paramètre tel qu'il est défini dans votre requête JPQL
+        String jpql = "SELECT l FROM Book AS l WHERE l.title LIKE :param"; //remplacez par votre requête 
+        String param="%C#%"; //remplacez par la valeur de type %votreChaine% (votre motif de recherche encadré par %)
+        String paramName = "param";//remplacez par le nom du paramètre tel qu'il est défini dans votre requête JPQL
         
         try{
         Query query = em.createQuery(jpql);
@@ -80,12 +80,12 @@ public class JPQLTest {
     @Test
     public void checkRequestWithCategoryParameter(){
         
-        String jpql = "VOTRE REQUETE PARAMETREE";//remplacez par votre requête
+        String jpql = "SELECT c FROM Category AS c WHERE c.parentCategory = :param";//remplacez par votre requête
         try{       
             Long catId = 56L; //"ID DE LA CATEGORIE" - remplacez par un id valide
             Category cat = em.find(Category.class,catId);
         
-            String paramName = "NOM DU PARAMETRE"; //remplacez par le nom du paramètre tel qu'il est défini dans votre requête JPQL
+            String paramName = "param"; //remplacez par le nom du paramètre tel qu'il est défini dans votre requête JPQL
 
             Query query = em.createQuery(jpql);
             query.setParameter(paramName, cat);

@@ -18,6 +18,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -28,6 +30,17 @@ import javax.persistence.Transient;
  * 1 requête permet de retrouvée les catégories enfants en fonction d'une catégorie parent<br>
  * 1 requête permet de retrouver les catégories racines / sans parents
  */
+
+@NamedQueries({
+    @NamedQuery(
+        name="Category.getRootCategories",
+        query="SELECT c FROM Category AS c WHERE c.parentCategory IS NULL"
+    ),
+    @NamedQuery(
+        name="Category.getChildrenCategories",
+        query="SELECT c FROM Category AS c WHERE c.parentCategory.id = :param"
+    ),
+})
 
 @Entity
 @Table(name="categories")
